@@ -81,10 +81,10 @@ require_once __DIR__ . '/Config/Config.php';
                                     <span><a href="#">Order <i class="fa fa-chevron-down"></i></a></span>
                                     <ul>
                                         <li>
-                                            <a href="../pay-with-card-online/">Pay online</a>
+                                            <a href="../pay-with-card-online/index.php">Pay online</a>
                                         </li>
                                         <li>
-                                            <a href="../pay-with-cash-on-delivery/">Pay with cash</a>
+                                            <a href="../pay-with-cash-on-delivery/index.php">Pay with cash</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -442,8 +442,8 @@ require_once __DIR__ . '/Config/Config.php';
                     <div class="col-md-3">
                         <h5 class="footer-heading">Order</h5>
                         <ul class="list-unstyled nav-links">
-                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-card-online/" class="footer-link">Pay online</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-cash-on-delivery/" class="footer-link">Pay with cash on delivery</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-card-online/index.php" class="footer-link">Pay online</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-cash-on-delivery/index.php" class="footer-link">Pay with cash on delivery</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4">

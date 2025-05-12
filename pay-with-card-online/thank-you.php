@@ -28,7 +28,7 @@ if (!empty($_SESSION["foodboard-cart"])) {
     $shippingAmount = $_SESSION["foodboard-cart"]["shippingAmount"];
     $checkoutService = $checkoutModel->sendOrderEmail($subject, $cartItemsArray, $shippingAmount, $customerDetailsArray, $recipientArr, $recipientCCArr);
 } else {
-    header("Location:" . Config::APP_ROOT . Config::WORK_ROOT . "pay-with-card-online/order.php");
+    header("Location:" . Config::APP_ROOT . Config::WORK_ROOT . "pay-with-card-online/index.phporder.php");
 }
 ?>
 
@@ -44,7 +44,7 @@ if (!empty($_SESSION["foodboard-cart"])) {
     <title>Juragan Tulang Rangu Karawang</title>
 
     <!-- Favicon -->
-    <link href="../img/favicon.png" rel="shortcut icon">
+    <link href="../img/logo.svg" rel="shortcut icon">
 
     <!-- Google Fonts - Jost -->
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -90,7 +90,7 @@ if (!empty($_SESSION["foodboard-cart"])) {
                 <div class="row">
                     <div class="col-lg-3 col-6">
                         <div id="logo">
-                            <h1><a href="/html/index.html" title="logo">Juragan Tulang Rangu</a></h1>
+                            <h1><a href="../index.html" title="logo">Juragan Tulang Rangu</a></h1>
                         </div>
                     </div>
                     <div class="col-lg-9 col-6">
@@ -101,15 +101,15 @@ if (!empty($_SESSION["foodboard-cart"])) {
                         <!-- Menu -->
                         <nav id="menu" class="main-menu">
                             <ul>
-                                <li><span><a href="/html/index.html">Home</a></span></li>
+                                <li><span><a href="../index.html">Home</a></span></li>
                                 <li>
                                     <span><a href="#">Order <i class="fa fa-chevron-down"></i></a></span>
                                     <ul>
                                         <li>
-                                            <a href="../pay-with-card-online/">Pay online</a>                                            
+                                            <a href="../pay-with-card-online/index.php">Pay online</a>                                            
                                         </li>
                                         <li>
-                                            <a href="../pay-with-cash-on-delivery/">Pay with cash</a>
+                                            <a href="../pay-with-cash-on-delivery/index.php">Pay with cash</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -197,7 +197,7 @@ if (!empty($_SESSION["foodboard-cart"])) {
                                     <strong><?php echo ucfirst($k); ?>: </strong><span><?php echo $v; ?></span>
                                 </div>
                             <?php } ?>
-                            <p class="mb-0"><a href="/html/index.html" class="btn-2">Back to Home</a></p>
+                            <p class="mb-0"><a href="../index.html" class="btn-2">Back to Home</a></p>
                         </div>
                     </div>
                 </div>
@@ -218,10 +218,10 @@ if (!empty($_SESSION["foodboard-cart"])) {
                         </ul>
                     </div>
                     <div class="col-md-3">
-                        <h5 class="footer-heading">Order Wizard</h5>
+                        <h5 class="footer-heading">Order</h5>
                         <ul class="list-unstyled nav-links">
-                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-card-online/" class="footer-link">Pay online</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-cash-on-delivery/" class="footer-link">Pay with cash on delivery</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-card-online/index.php" class="footer-link">Pay online</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-cash-on-delivery/index.php" class="footer-link">Pay with cash on delivery</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4">
@@ -230,7 +230,7 @@ if (!empty($_SESSION["foodboard-cart"])) {
                             <li><i class="icon icon-map-marker"></i><a href="https://goo.gl/maps/vKgGyZe2JSRLDnYH6" class="footer-link" target="_blank">Address: 1234 Street Name, City Name, USA</a>
                             </li>
                             <li><i class="icon icon-envelope3"></i><a href="mailto:info@yourdomain.com" class="footer-link">Mail: info@yourdomain.com</a></li>
-                            <li><i class="icon icon-phone2"></i><a href="tel:+3630123456789" class="footer-link">Phone: +3630123456789</a></li>
+                            <li><i class="icon icon-phone2"></i><a href="tel:+628123456789" class="footer-link">Phone: +628123456789</a></li>
                         </ul>
                     </div>
                     <div class="col-md-2">

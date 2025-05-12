@@ -90,7 +90,7 @@ if (!empty($_SESSION["foodboard-cart"])) {
                 <div class="row">
                     <div class="col-lg-3 col-6">
                         <div id="logo">
-                            <h1><a href="https://ultimatewebsolutions.net/foodboard/" title="FoodBoard">FoodBoard</a></h1>
+                            <h1><a href="../index.html" title="logo">Juragan Tulang Rangu</a></h1>
                         </div>
                     </div>
                     <div class="col-lg-9 col-6">
@@ -101,23 +101,15 @@ if (!empty($_SESSION["foodboard-cart"])) {
                         <!-- Menu -->
                         <nav id="menu" class="main-menu">
                             <ul>
-                                <li><span><a href="https://ultimatewebsolutions.net/foodboard/">Home</a></span></li>
+                                <li><span><a href="../index.html">Home</a></span></li>
                                 <li>
                                     <span><a href="#">Order <i class="fa fa-chevron-down"></i></a></span>
                                     <ul>
                                         <li>
-                                            <span><a href="#">Pay online</a></span>
-                                            <ul>
-                                                <li><a href="../pay-with-card-online/">Demo 1 - Filtering</a></li>
-                                                <li><a href="../pay-with-card-online/order-2.php">Demo 2 - Sticky navigation</a></li>
-                                            </ul>
+                                            <a href="../pay-with-card-online/index.php">Pay online</a>                                        
                                         </li>
                                         <li>
-                                            <span><a href="#">Pay with cash</a></span>
-                                            <ul>
-                                                <li><a href="../pay-with-cash-on-delivery/">Demo 1 - Filtering</a></li>
-                                                <li><a href="../pay-with-cash-on-delivery/order-2.php">Demo 2 - Sticky navigation</a></li>
-                                            </ul>
+                                            <a href="../pay-with-cash-on-delivery/index.php">Pay with cash</a>                                            
                                         </li>
                                     </ul>
                                 </li>
@@ -205,7 +197,7 @@ if (!empty($_SESSION["foodboard-cart"])) {
                                     <strong><?php echo ucfirst($k); ?>: </strong><span><?php echo $v; ?></span>
                                 </div>
                             <?php } ?>
-                            <p class="mb-0"><a href="https://ultimatewebsolutions.net/foodboard/" class="btn-2">Back to Home</a></p>
+                            <p class="mb-0"><a href="../index.html" class="btn-2">Back to Home</a></p>
                         </div>
                     </div>
                 </div>
@@ -220,16 +212,16 @@ if (!empty($_SESSION["foodboard-cart"])) {
                     <div class="col-md-3">
                         <h5 class="footer-heading">Menu Links</h5>
                         <ul class="list-unstyled nav-links">
-                            <li><i class="fa fa-angle-right"></i> <a href="https://ultimatewebsolutions.net/foodboard/" class="footer-link">Home</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="../index.html" class="footer-link">Home</a></li>
                             <li><i class="fa fa-angle-right"></i> <a href="../faq.html" class="footer-link">FAQ</a></li>
                             <li><i class="fa fa-angle-right"></i> <a href="../contacts.html" class="footer-link">Contacts</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3">
-                        <h5 class="footer-heading">Order Wizard</h5>
+                        <h5 class="footer-heading">Order</h5>
                         <ul class="list-unstyled nav-links">
-                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-card-online/" class="footer-link">Pay online</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-cash-on-delivery/" class="footer-link">Pay with cash on delivery</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-card-online/index.php" class="footer-link">Pay online</a></li>
+                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-cash-on-delivery/index.php" class="footer-link">Pay with cash on delivery</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4">
@@ -238,7 +230,7 @@ if (!empty($_SESSION["foodboard-cart"])) {
                             <li><i class="icon icon-map-marker"></i><a href="https://goo.gl/maps/vKgGyZe2JSRLDnYH6" class="footer-link" target="_blank">Address: 1234 Street Name, City Name, USA</a>
                             </li>
                             <li><i class="icon icon-envelope3"></i><a href="mailto:info@yourdomain.com" class="footer-link">Mail: info@yourdomain.com</a></li>
-                            <li><i class="icon icon-phone2"></i><a href="tel:+3630123456789" class="footer-link">Phone: +3630123456789</a></li>
+                            <li><i class="icon icon-phone2"></i><a href="tel:+3630123456789" class="footer-link">Phone: +628123456789</a></li>
                         </ul>
                     </div>
                     <div class="col-md-2">
@@ -255,12 +247,12 @@ if (!empty($_SESSION["foodboard-cart"])) {
                 <div class="row">
                     <div class="col-md-8">
                         <ul id="subFooterLinks">
-                            <li><a href="https://themeforest.net/user/ultimatewebsolutions" target="_blank">With <i class="fa fa-heart pulse"></i> by UWS</a></li>
+                            <li><a href="#" target="_blank">With <i class="fa fa-heart pulse"></i> by Kelompok 1</a></li>
                             <li><a href="../pdf/terms.pdf" target="_blank">Terms and conditions</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4">
-                        <div id="copy">© 2021 FoodBoard</div>
+                        <div id="copy">© 2025 Juragan Tulang Rangu Karawang</div>
                     </div>
                 </div>
             </div>

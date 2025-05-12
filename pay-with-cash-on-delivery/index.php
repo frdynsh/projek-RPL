@@ -82,10 +82,10 @@ require_once __DIR__ . '/Config/Config.php';
 									<span><a href="#">Order <i class="fa fa-chevron-down"></i></a></span>
 									<ul>
 										<li>
-											<a href="../pay-with-card-online/">Pay online</a>											
+											<a href="../pay-with-card-online/index.php">Pay online</a>											
 										</li>
 										<li>
-											<a href="../pay-with-cash-on-delivery/">Pay with cash</a>								
+											<a href="../pay-with-cash-on-delivery/index.php">Pay with cash</a>								
 										</li>
 									</ul>
 								</li>
@@ -442,8 +442,8 @@ require_once __DIR__ . '/Config/Config.php';
 					<div class="col-md-3">
 						<h5 class="footer-heading">Order</h5>
 						<ul class="list-unstyled nav-links">
-							<li><i class="fa fa-angle-right"></i> <a href="../pay-with-card-online/" class="footer-link">Pay online</a></li>
-							<li><i class="fa fa-angle-right"></i> <a href="../pay-with-cash-on-delivery/" class="footer-link">Pay with cash on delivery</a></li>
+							<li><i class="fa fa-angle-right"></i> <a href="../pay-with-card-online/index.php" class="footer-link">Pay online</a></li>
+							<li><i class="fa fa-angle-right"></i> <a href="../pay-with-cash-on-delivery/index.php" class="footer-link">Pay with cash on delivery</a></li>
 						</ul>
 					</div>
 					<div class="col-md-4">
@@ -452,7 +452,7 @@ require_once __DIR__ . '/Config/Config.php';
 							<li><i class="icon icon-map-marker"></i><a href="https://goo.gl/maps/vKgGyZe2JSRLDnYH6" class="footer-link" target="_blank">Address: 1234 Street Name, City Name, USA</a>
 							</li>
 							<li><i class="icon icon-envelope3"></i><a href="mailto:info@yourdomain.com" class="footer-link">Mail: info@yourdomain.com</a></li>
-							<li><i class="icon icon-phone2"></i><a href="tel:+3630123456789" class="footer-link">Phone: +3630123456789</a></li>
+							<li><i class="icon icon-phone2"></i><a href="tel:+628123456789" class="footer-link">Phone: +628123456789</a></li>
 						</ul>
 					</div>
 					<div class="col-md-2">
