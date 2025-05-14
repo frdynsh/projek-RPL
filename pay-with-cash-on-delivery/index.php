@@ -333,8 +333,8 @@ require_once __DIR__ . '/Config/Config.php';
 												<div class="row">
 													<div class="col-md-12">
 														<div class="form-group">
-															<label for="phoneCashPayment">Phone (+62)</label>
-															<input id="phoneCashPayment" class="form-control" name="phone" type="text" data-parsley-pattern="^\+{1}[0-9]+$" required />
+															<label for="phoneCashPayment">Phone (62)</label>
+															<input id="phoneCashPayment" class="form-control" name="phone" type="text" data-parsley-pattern="^62[0-9]+$" required />
 														</div>
 													</div>
 												</div>
