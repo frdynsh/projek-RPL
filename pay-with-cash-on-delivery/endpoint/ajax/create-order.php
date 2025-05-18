@@ -94,7 +94,7 @@ if (!empty($jsondecoded)) {
     ];
 
     $token = "elGq6IWYpO5LeMxO1iuhz7lZa1IifJzgqqA9f5O8bH1xb8hrh4yyTEy";
-    $secretKey = "fRhhEK1O";
+    $secretKey = "VphGFCEc";
 
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, "https://jkt.wablas.com/api/send-message");
@@ -108,10 +108,4 @@ if (!empty($jsondecoded)) {
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
     $response = curl_exec($curl);
     curl_close($curl);
-
-    // Simpan log ke file untuk debugging
-    $logMessage = "==== WABLAS LOG " . date('Y-m-d H:i:s') . " ====" . PHP_EOL;
-    $logMessage .= "Request: " . print_r($data, true) . PHP_EOL;
-    $logMessage .= "Response: " . $response . PHP_EOL . PHP_EOL;
-    file_put_contents("wablas-log.txt", $logMessage, FILE_APPEND);    
 }
