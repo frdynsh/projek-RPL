@@ -32,7 +32,7 @@ function confirmGuestOrder(event) {
 			url: 'endpoint/ajax/create-order.php',
 			type: 'POST',
 			data: JSON.stringify({
-				items: [itemsArray],
+				items: itemsArray,
 				email: document.getElementById('emailCashPayment').value,
 				name: document.getElementById('userNameCashPayment').value,
 				phone: document.getElementById('phoneCashPayment').value,
