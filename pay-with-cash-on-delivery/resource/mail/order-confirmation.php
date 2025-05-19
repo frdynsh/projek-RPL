@@ -1,13 +1,12 @@
 <?php
 
-
-
 use Foodboard\Config;
 
 function getOrderBody($cartItemsArray, $customerDetailsArray, $shippingAmount)
 {
     ob_start();
 
+    $cartItems = $cartItemsArray;
 ?>
 
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -57,10 +56,17 @@ function getOrderBody($cartItemsArray, $customerDetailsArray, $shippingAmount)
                                                                         <th style="padding: 5px 10px; border-bottom: 1px #E0E0E0 solid; text-align: right" width="15%"><?php echo "Total Price"; ?> (<?php echo Config::CURRENCY_SYMBOL; ?>)</th>
                                                                     </tr>
                                                                     <?php
+                                                                    $total_price_array = [];
                                                                     foreach ($cartItemsArray as $cartItems) {
-                                                                        foreach ($cartItems as $k => $v) {
-                                                                            $productTitle = $cartItems[$k]["name"];
-                                                                            $price = $cartItems[$k]["unit_price"];
+                                                                        foreach ($cartItems as $k => $item) {
+                                                                            if (is_array($item)) {
+                                                                                $productTitle = $item["name"] ?? "Unknown Product";
+                                                                                $price = $item["unit_price"] ?? 0;
+                                                                                // dan seterusnya...
+                                                                            } else {
+                                                                                // Skip jika bukan array
+                                                                                continue;
+                                                                            }                                                                    
                                                                     ?>
                                                                             <tr class="product-title-resp">
                                                                                 <td style="padding: 5px 10px; border-bottom: 1px #E0E0E0 solid; border-right: 1px #E0E0E0 solid;"><?php echo $productTitle; ?></td>

@@ -35,12 +35,13 @@ if (!empty($jsondecoded)) {
     // ================================
     $cart = $_SESSION['foodboard-cart'];
     $items = $cart['items'];
-    $buyerName = $customerDetailsArray['name'];
-    $phoneNumber = $customerDetailsArray['phone'];
-    $address = $customerDetailsArray['address'];
+    $buyerName = $cart['customerDetails']['name'];
+    $phoneNumber = $cart['customerDetails']['phone'];
+    $address = $cart['customerDetails']['address'];
+    $buyerNote = $cart['customerDetails']['message'];
     $ongkir = $cart['shippingAmount'];
 
-    // Format nomor telepon ke 62
+    // Format nomor telepon ke internasional
     $phoneIntl = preg_replace('/\D/', '', $phoneNumber);
     if (substr($phoneIntl, 0, 2) !== '62') {
         if (substr($phoneIntl, 0, 1) === '0') {
@@ -50,47 +51,61 @@ if (!empty($jsondecoded)) {
         }
     }
 
-    // Buat isi pesan invoice
-    $waMessage  = "🧾 *Invoice Pemesanan Anda*\n\n";
-    $waMessage .= "👤 Nama: *$buyerName*\n";
-    $waMessage .= "📍 Alamat: $address\n\n";
-    $waMessage .= "📦 *Detail Pesanan:*\n";
+    // Format isi pesan WhatsApp
+    $waMessage  = "📦 [PESANAN SEDANG DIPROSES]\n";
+    $waMessage .= "Hai *$buyerName*! Terima kasih telah melakukan pemesanan 🙏\n";
+    $waMessage .= "Pesanan kamu saat ini sedang kami proses dengan penuh perhatian 💼✨\n\n";
+
+    $waMessage .= "🧾 *INVOICE PEMESANAN*\n";
+    $waMessage .= "Berikut detail pesanan kamu:\n\n";
+
+    $waMessage .= "👤 *Nama Pembeli:*\n$buyerName\n\n";
+    $waMessage .= "🏠 *Alamat Pengiriman:*\n$address\n\n";
+    $waMessage .= "💬 *Pesan dari Pembeli:*\n\"$buyerNote\"\n\n";
+    $waMessage .= "🛒 *Detail Pesanan:*\n";
+
     $subtotal = 0;
     foreach ($items as $item) {
         $productName = $item['name'];
-        $qty = $item['qty'];
-        $price = $item['price'];
+        $qty = $item['quantity'];
+        $price = $item['unit_price'];
         $lineTotal = $qty * $price;
         $subtotal += $lineTotal;
-        $waMessage .= "- $productName (x$qty) = Rp " . number_format($lineTotal, 0, ',', '.') . "\n";
+        $waMessage .= "$productName x$qty = Rp" . number_format($lineTotal, 0, ',', '.') . "\n";
     }
-    $waMessage .= "\n💸 *Subtotal:* Rp " . number_format($subtotal, 0, ',', '.');
-    $waMessage .= "\n🚚 *Ongkir:* Rp " . number_format($ongkir, 0, ',', '.');
-    $waMessage .= "\n🧾 *Total:* Rp " . number_format($subtotal + $ongkir, 0, ',', '.') . "\n\n";
-    $waMessage .= "🙏 Terima kasih telah berbelanja di toko kami.";
 
-    // Kirim lewat API Wablas
-    $payload = [
-        "data" => [
-            [
-                "phone" => $phoneIntl,
-                "message" => $waMessage
-            ]
-        ]
+    $waMessage .= "\n💰 *Subtotal:*\nRp" . number_format($subtotal, 0, ',', '.') . "\n";
+    $waMessage .= "🚚 *Ongkos Kirim:*\nRp" . number_format($ongkir, 0, ',', '.') . "\n";
+    $waMessage .= "🧮 *Total Pembayaran:*\nRp" . number_format($subtotal + $ongkir, 0, ',', '.') . "\n\n";
+
+    $waMessage .= "🙏 Terima kasih sudah memesan di toko kami!\n";
+    $waMessage .= "Kami sangat menghargai kepercayaan kamu 💖\n\n";
+
+    $waMessage .= "📱 Jangan lupa untuk pantau terus sosial media kami ya, karena akan ada banyak promo menarik, info produk baru, dan giveaway seru! 🎉\n";
+    $waMessage .= "🔍 IG: @namatoko | TikTok: @namatoko | FB: Nama Toko\n\n";
+
+    $waMessage .= "💬 Bila ada pertanyaan, jangan ragu untuk menghubungi kami. Kami siap membantu kamu sebaik mungkin 🤗\n\n";
+    $waMessage .= "🌟 Semoga harimu menyenangkan dan pesanan kamu memuaskan! 🌟";
+
+    // Siapkan payload dan kirim ke API Wablas
+    $data = [
+        'phone' => $phoneIntl,
+        'message' => $waMessage
     ];
 
+    $token = "elGq6IWYpO5LeMxO1iuhz7lZa1IifJzgqqA9f5O8bH1xb8hrh4yyTEy";
+    $secretKey = "VphGFCEc";
+
     $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, "https://kirim.pesan.biz.id/api/v2/send-message");
+    curl_setopt($curl, CURLOPT_URL, "https://jkt.wablas.com/api/send-message");
     curl_setopt($curl, CURLOPT_HTTPHEADER, [
-        "Content-Type: application/json",
-        "Authorization: elGq6IWYpO5LeMxO1iuhz7lZa1IifJzgqqA9f5O8bH1xb8hrh4yyTEy"
+        "Authorization: $token.$secretKey"
     ]);
-    curl_setopt($curl, CURLOPT_POST, true);
-    curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload));
+    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($data));
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
     $response = curl_exec($curl);
     curl_close($curl);
-
-    // Simpan log untuk debugging (opsional)
-    file_put_contents('wablas-log.txt', $response . PHP_EOL, FILE_APPEND);
 }

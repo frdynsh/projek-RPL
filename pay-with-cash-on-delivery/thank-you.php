@@ -8,27 +8,45 @@ require_once __DIR__ . '/Config/Config.php';
 
 if (!empty($_SESSION["foodboard-cart"])) {
 
-    $cartItemsArray = $_SESSION["foodboard-cart"]["items"];
-    $customerDetailsArray = $_SESSION["foodboard-cart"]["customerDetails"];
+    $cartItemsArray = $_SESSION["foodboard-cart"]["items"] ?? [];
+    $customerDetailsArray = $_SESSION["foodboard-cart"]["customerDetails"] ?? [];
+    $deliveryDetailsArray = $_SESSION["foodboard-cart"]["deliveryDetails"] ?? [];
+    $paymentDetailsArray = $_SESSION["foodboard-cart"]["paymentDetails"] ?? [];
+    $shippingAmount = $_SESSION["foodboard-cart"]["shippingAmount"] ?? 0;
+
     $subject = Config::ORDER_EMAIL_SUBJECT;
+
     require_once __DIR__ . '/Service/CheckoutService.php';
     $checkoutModel = new CheckoutService();
 
-    $recipientArr = array(
-        $_SESSION["foodboard-cart"]["customerDetails"]["email"] => $_SESSION["foodboard-cart"]["customerDetails"]["email"]
-    );
+    // Ambil email customer secara langsung
+    $customerEmail = $customerDetailsArray["email"] ?? "";
+
+    // Perbaikan format $recipientArr
+    $recipientArr = [
+        $customerEmail => $customerEmail
+    ];
+
+    // Pastikan $recipientCCArr tetap ada, meskipun kosong
+    $recipientCCArr = [];
 
     if (!empty(Config::RECIPIENT_EMAIL)) {
-        $recipientCCArr = array(
-            Config::RECIPIENT_EMAIL => Config::RECIPIENT_EMAIL
-        );
+        $recipientCCArr[Config::RECIPIENT_EMAIL] = Config::RECIPIENT_EMAIL;
     }
 
+    // Kirim email konfirmasi
+    $checkoutService = $checkoutModel->sendOrderEmail(
+        $subject,
+        $cartItemsArray,
+        $shippingAmount,
+        $customerDetailsArray,
+        $recipientArr,
+        $recipientCCArr
+    );
 
-    $shippingAmount = $_SESSION["foodboard-cart"]["shippingAmount"];
-    $checkoutService = $checkoutModel->sendOrderEmail($subject, $cartItemsArray, $shippingAmount, $customerDetailsArray, $recipientArr, $recipientCCArr);
 } else {
     header("Location:" . Config::APP_ROOT . Config::WORK_ROOT . "pay-with-cash-on-delivery/order.php");
+    exit;
 }
 ?>
 
@@ -154,31 +172,37 @@ if (!empty($_SESSION["foodboard-cart"])) {
                                     </tr>
                                 </thead>
                                 <tbody>
-
                                     <?php
-                                    foreach ($cartItemsArray as $cartItems) {
-                                        foreach ($cartItems as $k => $v) {
-                                            $productTitle = $cartItems[$k]["name"];
-                                            $price = $cartItems[$k]["unit_price"];
-                                    ?>
-                                            <tr class="product-title-resp">
-                                                <td class="text-left"><span class="inline-block title-width"><?php echo $productTitle; ?></span></td>
-                                                <td data-label="Price" class="table-td"><?php echo number_format($price, 2); ?></td>
-                                                <td data-label="Quantity" class="table-td"><?php echo $cartItems[$k]['quantity']; ?></td>
-                                                <td data-label="Total" class="table-td"><?php echo number_format($price * $cartItems[$k]['quantity'], 2); ?></td>
+                                    $total_price_array = [];
 
-                                            </tr>
-                                        <?php
-                                            $total_price_array[] = $price * $cartItems[$k]['quantity'];
-                                        }
+                                    foreach ($cartItemsArray as $item) {
+                                        $productTitle = $item["name"];
+                                        $price = $item["unit_price"];
+                                        $quantity = $item["quantity"];
+                                        $total = $price * $quantity;
+                                        $total_price_array[] = $total;
+                                    ?>
+                                        <tr class="product-title-resp">
+                                            <td class="text-left"><span class="inline-block title-width"><?php echo $productTitle; ?></span></td>
+                                            <td data-label="Price" class="table-td"><?php echo number_format($price, 2); ?></td>
+                                            <td data-label="Quantity" class="table-td"><?php echo $quantity; ?></td>
+                                            <td data-label="Total" class="table-td"><?php echo number_format($total, 2); ?></td>
+                                        </tr>
+                                    <?php
                                     }
+
                                     $sub_total_price = array_sum($total_price_array);
+
                                     if (!empty($shippingAmount)) {
                                         $total_price = $sub_total_price + $shippingAmount;
-                                        ?>
+                                    ?>
                                         <tr class="sub_total">
-                                            <td class="grand-resp" align="right" colspan="2"><strong><?php echo "Delivery Fee"; ?> (<?php echo Config::CURRENCY_SYMBOL; ?>)</strong></td>
-                                            <td data-label="Shipping Total" align="right" colspan="3"><strong><?php echo number_format($shippingAmount, 2); ?></strong></td>
+                                            <td class="grand-resp" align="right" colspan="2">
+                                                <strong><?php echo "Delivery Fee"; ?> (<?php echo Config::CURRENCY_SYMBOL; ?>)</strong>
+                                            </td>
+                                            <td data-label="Shipping Total" align="right" colspan="3">
+                                                <strong><?php echo number_format($shippingAmount, 2); ?></strong>
+                                            </td>
                                         </tr>
                                     <?php
                                     } else {
@@ -186,10 +210,15 @@ if (!empty($_SESSION["foodboard-cart"])) {
                                     }
                                     ?>
                                     <tr class="sub_total">
-                                        <td class="grand-resp" align="right" colspan="2"><strong><?php echo "Grand Total"; ?> (<?php echo Config::CURRENCY_SYMBOL; ?>)</strong></td>
-                                        <td data-label="Grand Total" align="right" colspan="3"><strong><?php echo number_format($total_price, 2); ?></strong></td>
+                                        <td class="grand-resp" align="right" colspan="2">
+                                            <strong><?php echo "Grand Total"; ?> (<?php echo Config::CURRENCY_SYMBOL; ?>)</strong>
+                                        </td>
+                                        <td data-label="Grand Total" align="right" colspan="3">
+                                            <strong><?php echo number_format($total_price, 2); ?></strong>
+                                        </td>
                                     </tr>
                                 </tbody>
+
                             </table>
                             <h3>Customer details:</h3>
                             <?php foreach ($customerDetailsArray as $k => $v) { ?>

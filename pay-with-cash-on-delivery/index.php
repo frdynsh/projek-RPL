@@ -469,7 +469,7 @@ require_once __DIR__ . '/Config/Config.php';
 				<div class="row">
 					<div class="col-md-8">
 						<ul id="subFooterLinks">
-							<li><a href="#" target="_blank">With <i class="fa fa-heart pulse"></i> by Kelompok 1</a></li>
+							<li><a href="#" target="_blank">With <i class="fa fa-heart pulse"></i> by Kelompok 2</a></li>
 							<li><a href="../pdf/terms.pdf" target="_blank">Terms and conditions</a></li>
 						</ul>
 					</div>
