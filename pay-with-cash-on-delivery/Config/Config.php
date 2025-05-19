@@ -5,7 +5,7 @@ namespace Foodboard;
 class Config
 {
 
-    const APP_ROOT = 'localhost';
+    const APP_ROOT = 'https://ultimatewebsolutions.net';
 
     const WORK_ROOT = '/projek-umkm/';
 
@@ -15,7 +15,7 @@ class Config
 
     const ORDER_EMAIL_SUBJECT = 'Order Confirmation';
 
-    const CURRENCY = 'IDR';
+    const CURRENCY = 'USD';
 
     const CURRENCY_SYMBOL = '$';
 

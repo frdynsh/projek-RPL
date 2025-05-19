@@ -82,7 +82,7 @@ if (!empty($jsondecoded)) {
     $waMessage .= "Kami sangat menghargai kepercayaan kamu 💖\n\n";
 
     $waMessage .= "📱 Jangan lupa untuk pantau terus sosial media kami ya, karena akan ada banyak promo menarik, info produk baru, dan giveaway seru! 🎉\n";
-    $waMessage .= "🔍 IG: @namatoko | TikTok: @namatoko | FB: Nama Toko\n\n";
+    $waMessage .= "🔍 IG: @tulangrangu_karawang | TikTok: @tulangrangu_karawangg\n\n";
 
     $waMessage .= "💬 Bila ada pertanyaan, jangan ragu untuk menghubungi kami. Kami siap membantu kamu sebaik mungkin 🤗\n\n";
     $waMessage .= "🌟 Semoga harimu menyenangkan dan pesanan kamu memuaskan! 🌟";
