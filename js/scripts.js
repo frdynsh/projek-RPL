@@ -96,12 +96,10 @@
 
 		// Prevent moving forward if total is zero
 		beforeForward: function (event, state) {
-
-			if ($('.total').val() == '$ 0.00') {
+			if ($('.total').val() == 'Rp 0') {
 				validateTotal();
 				return false; // prevent moving forward
 			}
-
 		},
 
 		// Reset validation and remove error notifications from the form
@@ -192,7 +190,7 @@
 		},
 		navbars: [{
 			position: 'bottom',
-			content: ['<a href="#">© 2021 FoodBoard</a>']
+			content: ['<a href="#">© 2025 Juragan Tulang Rangu Karawang</a>']
 		}]
 	}, {
 		// configuration
@@ -261,7 +259,7 @@
 	// MODAL
 	// =====================================================
 	function resetModalOptions() {
-		$(':radio[value="Medium: 32cm"]').prop('checked', true);
+		$(':radio[value="Medium"]').prop('checked', true);
 		$('.modal-popup .inp-cbx').prop('checked', false);
 	}
 
@@ -317,7 +315,7 @@
 	// Add custom empty order validation
 	window.Parsley.addValidator('emptyOrder', {
 		validateString: function (value) {
-			return value !== '$ 0.00';
+			return value !== 'Rp 0';
 		},
 		messages: {
 			en: 'Order is empty.'
@@ -338,9 +336,10 @@
 	// Function to format item prices usign priceFormat plugin
 	function formatPrice() {
 		$('.format-price').priceFormat({
-			prefix: '$ ',
-			centsSeparator: '.',
-			thousandsSeparator: ','
+			prefix: 'Rp ',
+			centsSeparator: ',',
+			thousandsSeparator: '.',
+			centsLimit: 0
 		});
 	}
 
@@ -348,7 +347,7 @@
 	function resetTotal() {
 
 		$('.totalTitle').val('Total');
-		$('.total').val('0.00');
+		$('.total').val('0');
 		formatPrice();
 
 	}
@@ -391,7 +390,7 @@
 		}
 	}
 
-	// Function to show a popup essage that item is added to cart
+	// Function to show a popup message that item is added to cart
 	function showItemAlreadyInCartMessage() {
 
 		// Only show this message when there is no popup opened
@@ -655,7 +654,7 @@
 		thumbnailPath = '../img/gallery/grid-items-small/' + id + '.jpg';
 
 		// Capture row where the item will be inserted
-		if (size == 'Small: 26cm') {
+		if (size == 'Small') {
 
 			// If extra is NOT checked
 			if (!extraIsChecked) {
@@ -691,7 +690,7 @@
 				}
 			}
 		}
-		if (size == 'Medium: 32cm') {
+		if (size == 'Medium') {
 
 			// If extra is NOT checked
 			if (!extraIsChecked) {
@@ -726,7 +725,7 @@
 				}
 			}
 		}
-		if (size == 'Large: 45cm') {
+		if (size == 'Large') {
 
 			// If extra is NOT checked
 			if (!extraIsChecked) {

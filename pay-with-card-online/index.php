@@ -14,7 +14,7 @@ require_once __DIR__ . '/Config/Config.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Guide to ordering food with online payment">
-    <meta name="author" content="UWS">
+    <meta name="author" content="Juragan Tulang Rangu Karawang">
     <title>Juragan Tulang Rangu Karawang</title>
     <!-- Favicon -->
     <link href="../img/logo.svg" rel="shortcut icon">
@@ -23,7 +23,7 @@ require_once __DIR__ . '/Config/Config.php';
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome CSS -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" >
 
     <!-- Custom Font Icons -->
     <link href="../vendor/icomoon/css/iconfont.min.css" rel="stylesheet">
@@ -70,9 +70,9 @@ require_once __DIR__ . '/Config/Config.php';
                     </div>
                     <div class="col-lg-9 col-6">
                         <ul id="menuIcons">
-                            <li><a href="#"><i class="icon icon-support"></i></a></li>
-                            <li><a href="#"><i class="icon icon-shopping-cart2"></i></a></li>
-                        </ul>
+							<li><a href="#"><i class="icon icon-support"></i></a></li>
+							<li><a href="#"><i class="icon icon-shopping-cart2"></i></a></li>
+						</ul>
                         <!-- Menu -->
                         <nav id="menu" class="main-menu">
                             <ul>
@@ -160,7 +160,7 @@ require_once __DIR__ . '/Config/Config.php';
                                                 <a href="#modalOptionsItem01" class="item-size modal-opener">Options</a>
                                             </li>
                                             <li>
-                                                <span class="item-price format-price">500</span>
+                                                <span class="item-price format-price">10000</span>
                                             </li>
                                             <li>
                                                 <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
@@ -187,10 +187,10 @@ require_once __DIR__ . '/Config/Config.php';
                                                 <a href="#modalOptionsItem02" class="item-size modal-opener">Options</a>
                                             </li>
                                             <li>
-                                                <span class="item-price format-price">6.80</span>
+                                                <span class="item-price format-price">10000</span>
                                             </li>
                                             <li>
-                                                <span class="item-price-discount format-price">7.65</span>
+                                                <span class="item-price-discount format-price">12000</span>
                                             </li>
                                             <li>
                                                 <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
@@ -217,7 +217,7 @@ require_once __DIR__ . '/Config/Config.php';
                                                 <a href="#modalOptionsItem03" class="item-size modal-opener">Options</a>
                                             </li>
                                             <li>
-                                                <span class="item-price format-price">8.65</span>
+                                                <span class="item-price format-price">10000</span>
                                             </li>
                                             <li>
                                                 <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
@@ -244,7 +244,7 @@ require_once __DIR__ . '/Config/Config.php';
                                                 <a href="#modalOptionsItem04" class="item-size modal-opener">Options</a>
                                             </li>
                                             <li>
-                                                <span class="item-price format-price">7.90</span>
+                                                <span class="item-price format-price">10000</span>
                                             </li>
                                             <li>
                                                 <a href="javascript:;" class="add-options-item-to-cart"><i class="icon icon-shopping-cart"></i></a>
@@ -285,7 +285,7 @@ require_once __DIR__ . '/Config/Config.php';
                                                 <div class="col-md-12 col-sm-12">
                                                     <label class="cbx radio-wrapper no-edges">
                                                         <input type="radio" value="delivery" name="transfer" checked> <span class="checkmark"></span>
-                                                        <span class="radio-caption">Delivery</span><span class="option-price format-price transfer">10.00</span>
+                                                        <span class="radio-caption">Delivery</span><span class="option-price format-price transfer">10000</span>
                                                     </label>
                                                 </div>
                                             </div>
@@ -293,7 +293,7 @@ require_once __DIR__ . '/Config/Config.php';
                                             <!-- Total -->
                                             <div class="row total-container">
                                                 <div class="col-md-12 p-0">
-                                                    <span class="totalTitle">Total</span><span class="totalValue format-price float-right">0.00</span>
+                                                    <span class="totalTitle">Total</span><span class="totalValue format-price float-right">0</span>
                                                     <input type="hidden" id="totalOrderSummary" class="total format-price" name="total" value="" data-parsley-errors-container="#totalError" data-parsley-empty-order="" disabled />
                                                 </div>
                                             </div>
@@ -362,7 +362,7 @@ require_once __DIR__ . '/Config/Config.php';
                                                 </div>
                                                 <div class="row total-container">
                                                     <div class="col-md-12 p-0">
-                                                        <span class="totalTitle">Total</span><span class="totalValue format-price float-right">0.00</span>
+                                                        <span class="totalTitle">Total</span><span class="totalValue format-price float-right">0</span>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -428,58 +428,58 @@ require_once __DIR__ . '/Config/Config.php';
         <!-- Main End -->
 
         <!-- Footer -->
-        <footer class="main-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <h5 class="footer-heading">Menu Links</h5>
-                        <ul class="list-unstyled nav-links">
-                            <li><i class="fa fa-angle-right"></i> <a href="../index.html" class="footer-link">Home</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="../faq.html" class="footer-link">FAQ</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="../contacts.html" class="footer-link">Contacts</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3">
-                        <h5 class="footer-heading">Order</h5>
-                        <ul class="list-unstyled nav-links">
-                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-card-online/index.php" class="footer-link">Pay online</a></li>
-                            <li><i class="fa fa-angle-right"></i> <a href="../pay-with-cash-on-delivery/index.php" class="footer-link">Pay with cash on delivery</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <h5 class="footer-heading">Contacts</h5>
-                        <ul class="list-unstyled contact-links">
-                            <li><i class="icon icon-map-marker"></i><a href="https://goo.gl/maps/vKgGyZe2JSRLDnYH6" class="footer-link" target="_blank">Address: 1234 Street Name, City Name, USA</a>
-                            </li>
-                            <li><i class="icon icon-envelope3"></i><a href="mailto:info@yourdomain.com" class="footer-link">Mail: info@yourdomain.com</a></li>
-                            <li><i class="icon icon-phone2"></i><a href="tel:+3630123456789" class="footer-link">Phone: +3630123456789</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-2">
-                        <h5 class="footer-heading">Find Us On</h5>
-                        <ul class="list-unstyled social-links">
-                            <li><a href="https://facebook.com" class="social-link" target="_blank"><i class="icon icon-facebook"></i></a></li>
-                            <li><a href="https://twitter.com" class="social-link" target="_blank"><i class="icon icon-twitter"></i></a></li>
-                            <li><a href="https://instagram.com" class="social-link" target="_blank"><i class="icon icon-instagram"></i></a></li>
-                            <li><a href="https://pinterest.com" class="social-link" target="_blank"><i class="icon icon-pinterest"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-md-8">
-                        <ul id="subFooterLinks">
-                            <li><a href="#" target="_blank">With <i class="fa fa-heart pulse"></i> by Kelompok 1</a></li>
-                            <li><a href="../pdf/terms.pdf" target="_blank">Terms and conditions</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <div id="copy">© 2025 Juragan Tulang Rangu Karawang</div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Footer End -->
+		<footer class="main-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<h5 class="footer-heading">Menu Links</h5>
+						<ul class="list-unstyled nav-links">
+							<li><i class="fa fa-angle-right"></i> <a href="index.html" class="footer-link">Home</a></li>
+							<li><i class="fa fa-angle-right"></i> <a href="faq.html" class="footer-link">FAQ</a></li>
+							<li><i class="fa fa-angle-right"></i> <a href="contacts.html" class="footer-link">Contacts</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h5 class="footer-heading">Order</h5>
+						<ul class="list-unstyled nav-links">
+							<li><i class="fa fa-angle-right"></i> <a href="pay-with-card-online/index.php" class="footer-link">Pay online</a></li>
+							<li><i class="fa fa-angle-right"></i> <a href="pay-with-cash-on-delivery/index.php" class="footer-link">Pay with cash on delivery</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<h5 class="footer-heading">Contacts</h5>
+						<ul class="list-unstyled contact-links">
+							<li><i class="icon icon-map-marker"></i><a href="https://maps.app.goo.gl/3kMUttsyy6Fy6rXi8" class="footer-link" target="_blank">Address: Stadion Singaperbangsa, Karawang, Indonesia</a></li>
+							<li><i class="icon icon-envelope3"></i><a href="mailto:frdynsh11@gmail.com" class="footer-link">Mail: frdynsh11@gmail.com</a></li>
+							<li><i class="icon icon-phone2"></i><a href="tel:+6285817128530" class="footer-link">Phone: +6285817128530</a></li>
+						</ul>
+					</div>
+					<div class="col-md-2">
+						<h5 class="footer-heading">Find Us On</h5>
+						<ul class="list-unstyled social-links">
+							<li><a href="https://facebook.com/ferdi.yansah.180072" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a></li>
+							<li><a href="https://wa.me/6285817128530" class="social-link" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+							<li><a href="https://instagram.com/tulangrangu_karawang" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="https://tiktok.com/@tulangrangu_karawangg" class="social-link" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-md-8">
+						<ul id="subFooterLinks">
+							<li><a href="img/kelompok2.jpg" target="_blank">With <i class="fa fa-heart pulse"></i> by Kelompok 2</a></li>
+							<li><a href="pdf/terms.pdf" target="_blank">Terms and conditions</a></li>
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<div id="copy">© 2025 Juragan Tulang Rangu Karawang
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Footer End -->
 
         <!-- Notification Messages -->
         <div class="addedToCartMsg">Added to cart</div>
@@ -535,27 +535,27 @@ require_once __DIR__ . '/Config/Config.php';
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <label class="cbx radio-wrapper">
-                        <input type="radio" value="Small: 26cm" name="size-options-item-01">
+                        <input type="radio" value="Small" name="size-options-item-01">
                         <span class="checkmark"></span>
-                        <span class="radio-caption">Small: 26cm</span><span class="option-price format-price">4.30</span>
+                        <span class="radio-caption">Small</span><span class="option-price format-price">5000</span>
                     </label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <label class="cbx radio-wrapper">
-                        <input type="radio" value="Medium: 32cm" name="size-options-item-01" checked>
+                        <input type="radio" value="Medium" name="size-options-item-01" checked>
                         <span class="checkmark"></span>
-                        <span class="radio-caption">Medium: 32cm</span><span class="option-price format-price">8.00</span>
+                        <span class="radio-caption">Medium</span><span class="option-price format-price">10000</span>
                     </label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <label class="cbx radio-wrapper">
-                        <input type="radio" value="Large: 45cm" name="size-options-item-01">
+                        <input type="radio" value="Large" name="size-options-item-01">
                         <span class="checkmark"></span>
-                        <span class="radio-caption">Large: 45cm</span><span class="option-price format-price">14.30</span>
+                        <span class="radio-caption">Large</span><span class="option-price format-price">15000</span>
                     </label>
                 </div>
             </div>
@@ -600,27 +600,27 @@ require_once __DIR__ . '/Config/Config.php';
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <label class="cbx radio-wrapper">
-                        <input type="radio" value="Small: 26cm" name="size-options-item-02">
+                        <input type="radio" value="Small" name="size-options-item-02">
                         <span class="checkmark"></span>
-                        <span class="radio-caption">Small: 26cm</span><span class="option-price format-price">4.30</span>
+                        <span class="radio-caption">Small</span><span class="option-price format-price">5000</span>
                     </label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <label class="cbx radio-wrapper">
-                        <input type="radio" value="Medium: 32cm" name="size-options-item-02" checked>
+                        <input type="radio" value="Medium" name="size-options-item-02" checked>
                         <span class="checkmark"></span>
-                        <span class="radio-caption">Medium: 32cm</span><span class="option-price format-price">6.80</span>
+                        <span class="radio-caption">Medium</span><span class="option-price format-price">10000</span>
                     </label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <label class="cbx radio-wrapper">
-                        <input type="radio" value="Large: 45cm" name="size-options-item-02">
+                        <input type="radio" value="Large" name="size-options-item-02">
                         <span class="checkmark"></span>
-                        <span class="radio-caption">Large: 45cm</span><span class="option-price format-price">13.60</span>
+                        <span class="radio-caption">Large</span><span class="option-price format-price">15000</span>
                     </label>
                 </div>
             </div>
@@ -665,27 +665,27 @@ require_once __DIR__ . '/Config/Config.php';
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <label class="cbx radio-wrapper">
-                        <input type="radio" value="Small: 26cm" name="size-options-item-03">
+                        <input type="radio" value="Small" name="size-options-item-03">
                         <span class="checkmark"></span>
-                        <span class="radio-caption">Small: 26cm</span><span class="option-price format-price">5.00</span>
+                        <span class="radio-caption">Small</span><span class="option-price format-price">5000</span>
                     </label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <label class="cbx radio-wrapper">
-                        <input type="radio" value="Medium: 32cm" name="size-options-item-03" checked>
+                        <input type="radio" value="Medium" name="size-options-item-03" checked>
                         <span class="checkmark"></span>
-                        <span class="radio-caption">Medium: 32cm</span><span class="option-price format-price">8.65</span>
+                        <span class="radio-caption">Medium</span><span class="option-price format-price">10000</span>
                     </label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <label class="cbx radio-wrapper">
-                        <input type="radio" value="Large: 45cm" name="size-options-item-03">
+                        <input type="radio" value="Large" name="size-options-item-03">
                         <span class="checkmark"></span>
-                        <span class="radio-caption">Large: 45cm</span><span class="option-price format-price">15.00</span>
+                        <span class="radio-caption">Large</span><span class="option-price format-price">15000</span>
                     </label>
                 </div>
             </div>
@@ -730,27 +730,27 @@ require_once __DIR__ . '/Config/Config.php';
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <label class="cbx radio-wrapper">
-                        <input type="radio" value="Small: 26cm" name="size-options-item-04">
+                        <input type="radio" value="Small" name="size-options-item-04">
                         <span class="checkmark"></span>
-                        <span class="radio-caption">Small: 26cm</span><span class="option-price format-price">4.30</span>
+                        <span class="radio-caption">Small</span><span class="option-price format-price">5000</span>
                     </label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <label class="cbx radio-wrapper">
-                        <input type="radio" value="Medium: 32cm" name="size-options-item-04" checked>
+                        <input type="radio" value="Medium" name="size-options-item-04" checked>
                         <span class="checkmark"></span>
-                        <span class="radio-caption">Medium: 32cm</span><span class="option-price format-price">7.90</span>
+                        <span class="radio-caption">Medium</span><span class="option-price format-price">10000</span>
                     </label>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <label class="cbx radio-wrapper">
-                        <input type="radio" value="Large: 45cm" name="size-options-item-04">
+                        <input type="radio" value="Large" name="size-options-item-04">
                         <span class="checkmark"></span>
-                        <span class="radio-caption">Large: 45cm</span><span class="option-price format-price">14.30</span>
+                        <span class="radio-caption">Large</span><span class="option-price format-price">15000</span>
                     </label>
                 </div>
             </div>
